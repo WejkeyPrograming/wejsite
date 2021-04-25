@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(18, 18, 19);
+    color: rgb(255, 247, 247);
+}
+.textik1 {
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Original Surfer', cursive;
+    text-shadow: 2px 2px 5px #f7f2f2;
+  }
+.alert.tip {
+    color: #215d42;
+    background: #12261d;
+}
+.alert.danger, .alert.tip, .alert.warning {
+    padding: .6rem 1.0rem;
+    border-left-width: .50rem;
+    border-left-style: solid;
+}
+div {
+    display: block;
+}
