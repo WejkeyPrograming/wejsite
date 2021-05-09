@@ -30,7 +30,7 @@ a {
   max-width: 210px;
   padding: 10px;
   min-height: 44px;
-  background: #000000;
+  background: #2a2d33;
   width: 100%;
   max-height: 44px;
 }
@@ -42,7 +42,7 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #000000;
+  background: #2a2d33;
 }
 .menu-button {
   float: left;
@@ -126,19 +126,6 @@ a {
   background: #2A2D33;
   border-right: 1px solid #E0E0E0;
   overflow-y: scroll;
-}
-#sidebar-nav h2 {
-  color: #60636B;
-  float: left;
-  width: 100%;
-  font-size: .8em;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 3px 0 2px 20px;
-  border-top: 1px solid #4D4C4C;
-  box-sizing: border-box;
-  margin: 10px 0;
 }
 
 #sidebar-nav ul li a {
@@ -325,4 +312,17 @@ pre {
   font-size: 20px;
   padding-left: 55px;
   font-family: 'Itim', cursive;
+}
+.headtext1{
+  color: #2c2c2c;
+  font-size: 20px;
+  padding-left: 20px;
+  font-family: 'Itim', cursive;
+}
+.headtext2{
+  color: #2c2c2c;
+  font-size: 20px;
+  padding-left: 20px;
+  font-family: 'Itim', cursive;
+  margin-top: -40px;
 }
