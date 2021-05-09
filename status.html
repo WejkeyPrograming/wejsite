@@ -1,0 +1,351 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>WS | STATUS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">  
+        <link rel="stylesheet" href="assets/css/status.css">  
+  </head>
+  
+  <body>
+  
+    <dashboard class="dashboard"><div class="server-list"><div class="server"><div class="server-icon fa fa-globe"></div> <ul class="server-details"><li>Web:<span class="data">WejSite</span></li> <li>Status:<span class="data signal">ONLINE</span></li> <li>Adresa:<span class="data">https://wejsite.tk/home</span></li></ul></div><div class="server"><div class="server-icon fa fa-globe"></div> <ul class="server-details"><li>Web:<span class="data">HTML</span></li> <li>Status:<span class="data signal">ONLINE</span></li> <li>Adresa:<span class="data">https://wejsite.tk/html</span></li></ul></div><div class="server"><div class="server-icon fa fa-globe"></div> <ul class="server-details"><li>Web:<span class="data">Status</span></li> <li>Status:<span class="data signal">ONLINE</span></li> <li>Adresa:<span class="data">https://wejsite.tk/status</span></li></ul></div><div class="server has-restart"><div class="server-icon fa fa-globe"></div> <ul class="server-details"><li>Web:<span class="data">Server</span></li> <li>Status:<span class="data signal">Maintenance</span></li> <li>Adresa:<span class="data">https://wejsite.tk/Server</span></li></ul></div></div></dashboard>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/2.0.0/vuex.min.js"></script>
+  
+    
+  
+      <script src="assets/js/index.js"></script>
+  
+  
+  
+  <style>
+      @import url("https://fonts.googleapis.com/css?family=Lato:300,300italic");
+  @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+  * {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: default;
+  }
+  
+  html {
+    font-size: 62.5%;
+    color: #c1c6cb;
+    background-color: #333;
+  }
+  
+  body {
+    padding: 20px 50px;
+  
+  }
+  
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #110d0d;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  .dashboard {
+    display: block;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .dashboard-header {
+    display: flex;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+  }
+  .dashboard-title {
+    flex: 1;
+    font-size: 2.5rem;
+  }
+  .dashboard-clock {
+    display: flex;
+    align-items: center;
+  }
+  .dashboard-clock-digital {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  .dashboard-clock-binary {
+    margin-left: 8px;
+    border-collapse: separate;
+  }
+  .dashboard-clock-binary td {
+    height: .4rem;
+    width: .4rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+  }
+  .dashboard-clock-binary .num1 {
+    background-color: #2eb35a;
+  }
+  
+  .server {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .server-icon {
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 2rem;
+  }
+  .server-details {
+    flex: 1;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .server-details li {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #7e8794;
+  }
+  .server-details li:last-child .data {
+    font-weight: normal;
+    color: rgba(230, 245, 255, 0.32);
+  }
+  .server-details .data {
+    display: block;
+    margin: -1.7rem 0 0 0;
+    padding: 0 1rem 0 0;
+    font-weight: 600;
+    text-align: right;
+    color: #c1c6cb;
+  }
+  .server-details .signal {
+    color: #2eb35a;
+  }
+  .server-details .signal::before {
+    content: '';
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    background-color: currentColor;
+    border-radius: 50%;
+    margin-right: .5rem;
+    margin-top: -.2rem;
+    vertical-align: middle;
+  }
+  .server-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+  }
+  
+  .server.has-failed {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: #d22c32;
+    -webkit-animation: alertblink 2s ease-in-out infinite;
+            animation: alertblink 2s ease-in-out infinite;
+  }
+  .server.has-failed .server-icon,
+  .server.has-failed .signal {
+    color: #d22c32;
+  }
+  .server.has-failed:hover {
+    background-color: rgba(210, 44, 50, 0.2);
+    -webkit-animation: none;
+            animation: none;
+  }
+  
+  @-webkit-keyframes alertblink {
+    0% {
+      background: rgba(210, 44, 50, 0);
+    }
+    50% {
+      background: rgba(210, 44, 50, 0.2);
+    }
+    100% {
+      background: rgba(210, 44, 50, 0);
+    }
+  }
+  
+  @keyframes alertblink {
+    0% {
+      background: rgba(210, 44, 50, 0);
+    }
+    50% {
+      background: rgba(210, 44, 50, 0.2);
+    }
+    100% {
+      background: rgba(210, 44, 50, 0);
+    }
+  }
+  
+  .server.has-restart {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: #ffa500;
+    -webkit-animation: alertblink 2s ease-in-out infinite;
+            animation: alertblink 2s ease-in-out infinite;
+  }
+  .server.has-restart .server-icon,
+  .server.has-restart .signal {
+    color: #ffa500;
+  }
+  .server.has-restart:hover {
+    background-color: rgba(210, 44, 50, 0.2);
+    -webkit-animation: none;
+            animation: none;
+  }
+  
+  </style>
+  <script>
+      var store = new Vuex.Store({
+      state: {
+          // initial state
+          servers: [
+          { name: 'website', status: false, adr: 'https://praaly.fr' },
+          { name: 'medias', status: true, adr: 'https://medias.praaly.fr'},
+          { name: 'post scriptum', status: false, adr: 'https://ps.praaly.fr'}		
+          ] },
+  
+  
+      mutations: {
+          UPDATE_SERVER_STATUS: function UPDATE_SERVER_STATUS(state, payload) {
+              state.servers[payload].status ^= false;
+          } },
+  
+      actions: {
+          serverStatus: function serverStatus(_ref, server) {var commit = _ref.commit;
+              commit('UPDATE_SERVER_STATUS', server);
+          } } });
+  
+  
+  
+  Vue.component('dashboard-clock', {
+      props: {
+          digital: {
+              default: true,
+              type: Boolean },
+  
+          binary: {
+              default: false,
+              type: Boolean } },
+  
+  
+      data: function data() {
+          return {
+              time: '' };
+  
+      },
+      template: '\n    <div class=\'dashboard-clock\'>\n        <div v-if="digital" class="dashboard-clock-digital">{{time}}</div>\n        <table v-if="binary" class="dashboard-clock-binary">\n            <tr class=\'hours\'>\n                <td v-for=\'n in 6\'></td>\n            </tr>\n            <tr class=\'minutes\'>\n                <td v-for=\'n in 6\'></td>\n            </tr>\n            <tr class=\'seconds\'>\n                <td v-for=\'n in 6\'></td>\n            </tr>\n        </table>\n    </div>\n    ',
+  
+  
+  
+      mounted: function mounted() {
+          window.setInterval(this.render, 1000);
+      },
+      methods: {
+          render: function render() {
+              var d = new Date();
+              var h = d.getHours();
+              var m = d.getMinutes();
+              var s = d.getSeconds();
+  
+              this.time = this.addZero(h) + ' : ' + this.addZero(m) + ' : ' + this.addZero(s);
+  
+              this.light(this.convert(s), '.seconds');
+              this.light(this.convert(m), '.minutes');
+              this.light(this.convert(h), '.hours');
+          },
+          convert: function convert(num) {
+              var bin = "";
+              var conv = [];
+  
+              while (num > 0) {
+                  bin = num % 2 + bin;
+                  num = Math.floor(num / 2);
+              }
+  
+              conv = bin.split('');
+  
+              while (conv.length < 6) {
+                  conv.unshift("0");
+              }
+  
+              return conv;
+          },
+          light: function light(array, type) {
+              $(type + ' td').attr('class', 'num0');
+              for (var i = 0; i < array.length; i++) {
+                  $(type + ' td:eq(' + i + ')').attr('class', 'num' + array[i]);
+              }
+          },
+          addZero: function addZero(i) {
+              if (i < 10) {
+                  i = "0" + i;
+              }
+              return i;
+          } } });
+  
+  
+  
+  Vue.component('dashboard-header', {
+      props: ['title'],
+      template: '\n    <header class="dashboard-header">\n        <h1 class="dashboard-title">{{title}}</h1>\n        <slot></slot>\n    </header>\n    ' });
+  
+  
+  
+  
+  
+  
+  
+  Vue.component('server-list', {
+      template: '<div class="server-list"><slot></slot></div>' });
+  
+  
+  Vue.component('server', {
+      props: ['type'],
+      template: '\n   <a href="<slot name="adr"></slot>"> <div class="server">\n        <div class="server-icon fa" \n            :class="\'fa-\' + (type === \'database\' ? \'tasks\' : \'globe\')">\n        </div>\n        <ul class="server-details">\n            <li>Hostname:<slot name="name"></slot></li>                         \n            <li>Status:<slot name="status"></slot></li>\n            <li>Address:<slot name="adr"></slot></li>\n        </ul>\n    </div></a>' });
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //Vue.use(Vuex);
+  var dashboard = new Vue({
+      el: 'dashboard',
+      data: function data() {
+          return {
+              servers: store.state.servers };
+  
+      },
+      methods: {
+          updateServerStatus: function updateServerStatus(server) {
+              store.dispatch('serverStatus', server);
+          } },
+  
+      mounted: function mounted() {var _this = this;
+          setInterval(function () {return (
+                  store.dispatch('serverStatus',
+                  Math.floor(Math.random() * (_this.servers.length - 0) + 0)));},
+          5000);
+      } });
+  </script>
+  
+  
+  
+  </body></html>
