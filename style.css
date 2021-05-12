@@ -1,6 +1,6 @@
 html, body {
   font-family: 'Open Sans', sans-serif;
-  height: 100%;
+  height: 150%;
 }
 body {
   background: #FFFFFF;
@@ -325,4 +325,31 @@ pre {
   padding-left: 20px;
   font-family: 'Itim', cursive;
   margin-top: -40px;
+}
+.button {
+  position: relative;
+  color: rgb(32, 30, 30);
+  background: 0 0;
+  margin: .5em;
+  padding: .5em .8em;
+  display: block;
+  font-size: 17px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.button.sun-flower {
+  border: 2px solid #f1c40f;
+}
+.button.orange {
+  border: 2px solid #fc5e03
+}
+.button.blue {
+  border: 2px solid #265cff;
+}
+.button.red {
+  border: 2px solid #e80c0c;
+}
+.button.green {
+  border: 2px solid #29fa11;
 }
