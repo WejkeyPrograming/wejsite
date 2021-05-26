@@ -26,11 +26,10 @@ a {
 }
 .white-label {
   float: left;
-  background: #33373B;
+  background: #0a0a0a;
   max-width: 210px;
   padding: 10px;
   min-height: 44px;
-  background: #2a2d33;
   width: 100%;
   max-height: 44px;
 }
@@ -42,7 +41,7 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #2a2d33;
+  background: #0a0a0a;
 }
 .menu-button {
   float: left;
@@ -123,7 +122,7 @@ a {
   width: 106%;
   height: calc(100% - 95px);
   padding: 0;
-  background: #2A2D33;
+  background: #0a0a0a;
   border-right: 1px solid #E0E0E0;
   overflow-y: scroll;
 }
@@ -181,7 +180,7 @@ a {
 }
 .content {
   float: left;
-  background: #E9EEF4;
+  background: #1d1d1d;
   width: 100%;
   height: calc(100% - 64px);
   -webkit-box-sizing: border-box;
@@ -189,7 +188,7 @@ a {
   box-sizing: border-box;
 }
 .content-header {
-  background: #fff;
+  background: #c7c7c7;
   float: left;
   width: 100%;
   margin-bottom: 15px;
@@ -197,7 +196,6 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-bottom: 1px solid #ccc;
 }
 .content-header h1 {
   margin: 0;
@@ -210,7 +208,6 @@ a {
 }
 .widget-box {
   background: #fff;
-  border: 1px solid #E0E0E0;
   float: left;
   width: 100%;
   margin: 10 10 15px 15px;
@@ -219,8 +216,9 @@ a {
   background: #2c2b2c;
 }
 .widget-header h2 {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: normal;
+  font-family: 'PT Serif', serif;
   margin: 0;
   padding: 11px 15px;
   color: #F9F9F9;
@@ -279,27 +277,27 @@ pre {
 }
 .htmlh1{
   font-size: 15px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Open Sans', sans-serif;
   color: #60636B;
 }
 .htmlh2{
   font-size: 15px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Open Sans', sans-serif;
   color: #212221;
 }
 .htmlh3{
   font-size: 15px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Open Sans', sans-serif;
   color: #60636B;
 }
 .htmlh4{
   font-size: 15px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Open Sans', sans-serif;
   color: #212221;
 }
 .htmlh0{
   font-size: 25px;
-  font-family: 'Averia Serif Libre', cursive;
+  font-family: 'ZCOOL KuaiLe', cursive;
   color: #000000;
 }
 .verzetext1{
@@ -314,13 +312,13 @@ pre {
   font-family: 'Itim', cursive;
 }
 .headtext1{
-  color: #2c2c2c;
+  color: #909090;
   font-size: 20px;
   padding-left: 20px;
   font-family: 'Itim', cursive;
 }
 .headtext2{
-  color: #2c2c2c;
+  color: #909090;
   font-size: 20px;
   padding-left: 20px;
   font-family: 'Itim', cursive;
