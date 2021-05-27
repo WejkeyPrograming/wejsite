@@ -318,13 +318,20 @@ pre {
   font-family: 'Itim', cursive;
 }
 .headtext2{
-  color: #909090;
+  color: #a1a1a1;
   font-size: 20px;
   padding-left: 20px;
   font-family: 'Itim', cursive;
   margin-top: -40px;
 }
-.button {
+.headtext3{
+  color: #a1a1a1;
+  font-size: 15px;
+  padding-left: 20px;
+  font-family: 'Itim', cursive;
+  margin-top: -40px;
+  }
+ .button {
   position: relative;
   color: rgb(32, 30, 30);
   background: 0 0;
