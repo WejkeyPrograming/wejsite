@@ -331,6 +331,20 @@ pre {
   font-family: 'Itim', cursive;
   margin-top: -40px;
   }
+  .headtext4{
+  color: #a1a1a1;
+  font-size: 30px;
+  padding-left: 20px;
+  font-family: 'Itim', cursive;
+  margin-top: -40px;
+  }
+  .odkaz {
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    color: #ffffff;
+    padding-left: 55px;
+    text-decoration: wavy;
+    }
  .button {
   position: relative;
   color: rgb(32, 30, 30);
